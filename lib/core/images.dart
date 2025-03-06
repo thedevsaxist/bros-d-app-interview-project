@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 /* 
@@ -8,12 +9,18 @@ import 'package:flutter_svg/svg.dart';
 /// Contains common app icons used throughout the application
 class AppIcons {
   /// Dropdown menu indicator icon
-  static final SvgPicture dropdownIcon =
-      SvgPicture.asset('lib/images/icons/dropdown.svg');
+  static final SvgPicture dropdownIcon = SvgPicture.asset(
+    'lib/images/icons/dropdown.svg',
+    height: 8,
+    fit: BoxFit.contain,
+  );
 
   /// Search functionality icon
-  static final SvgPicture searchIcon =
-      SvgPicture.asset('lib/images/icons/bros_d_search.svg');
+  static final SvgPicture searchIcon = SvgPicture.asset(
+    'lib/images/icons/bros_d_search.svg',
+    height: 24,
+    fit: BoxFit.contain,
+  );
 
   /// Notification bell icon
   static final SvgPicture notificationIcon =
@@ -23,8 +30,11 @@ class AppIcons {
 /// Contains app logo variants
 class AppLogos {
   /// White version of app logo
-  static final SvgPicture white =
-      SvgPicture.asset('lib/images/logos/logo_white.svg');
+  static final SvgPicture white = SvgPicture.asset(
+    'lib/images/logos/logo_white.svg',
+    height: 24,
+    fit: BoxFit.cover,
+  );
 
   /// Colored version of app logo
   static final SvgPicture colored =

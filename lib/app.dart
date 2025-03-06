@@ -11,6 +11,7 @@ class BrosDAppDemo extends StatelessWidget {
     return MaterialApp(
       title: 'Bros D App',
       theme: appTheme,
+      debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
     );
   }
