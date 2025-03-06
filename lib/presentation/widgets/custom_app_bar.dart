@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final toolbarHeight = CustomToolbarHeight(context: context).cToolbarHeight;
 
-    final String formattedDate = DateFormat('EEEE, MMMM d, y').format(
+    final String formattedDate = DateFormat('EEEE, dd MMMM, y').format(
       DateTime.now(),
     );
     return AppBar(
@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
               Text(
                 formattedDate,
                 style: GoogleFonts.poppins(
-                  fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
+                  fontSize: Theme.of(context).textTheme.titleSmall?.fontSize,
                   color: AppColors.black,
                 ),
               ),
@@ -80,7 +80,7 @@ class CustomAppBar extends StatelessWidget {
               AppLogos.white,
 
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                padding: const EdgeInsets.symmetric(vertical: 18.0),
                 child: Row(
                   children: [
                     // home
