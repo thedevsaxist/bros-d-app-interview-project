@@ -12,11 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.17
+  flutter_svg_provider: ^1.0.7
   google_fonts: ^6.2.1
   provider: ^6.1.2
 
 dev_dependencies:
-
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
@@ -31,7 +31,7 @@ flutter:
     - lib/images/logos/
     - lib/images/
     - lib/images/bros_d_app_mascot.svg
-
+    - lib/images/logos/bros_d_logo.png
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -44,7 +44,6 @@ flutter:
   #       - asset: lib/core/fonts/Monda/static/Monda-Rgular.ttf
   #       - asset: lib/core/fonts/Monda/static/Monda-SemiBold.ttf
   #       - asset: lib/core/fonts/Monda/static/Monda-Bold.ttf
-        
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

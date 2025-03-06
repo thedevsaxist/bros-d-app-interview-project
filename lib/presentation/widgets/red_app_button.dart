@@ -23,6 +23,7 @@ class _RedAppButtonState extends State<RedAppButton> {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        padding: const WidgetStatePropertyAll(kPadding20),
         backgroundColor: WidgetStatePropertyAll(
           widget.isInverse == null ? AppColors.red : AppColors.white,
         ),

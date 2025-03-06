@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg_provider;
 
 /* 
   This file contains classes that manage SVG assets for the application.
@@ -39,6 +40,12 @@ class AppLogos {
   /// Colored version of app logo
   static final SvgPicture colored =
       SvgPicture.asset('lib/images/logos/logo_colored.svg');
+
+  static final Image coloredPNG = Image.asset(
+    'lib/images/logos/bros_d_logo.png',
+    // height: 57,
+    fit: BoxFit.contain,
+  );
 }
 
 /// Contains icons representing different service categories
@@ -95,8 +102,8 @@ class ServiceCategory {
 /// Contains general app images
 class AppImages {
   /// Family illustration
-  static final SvgPicture familyPicture =
-      SvgPicture.asset('lib/images/family_picture.svg');
+  static const familyPicture =
+      svg_provider.Svg('lib/images/family_picture.svg');
 
   /// Demo app screenshot with mascot
   static final SvgPicture demoAppWithMascot =
