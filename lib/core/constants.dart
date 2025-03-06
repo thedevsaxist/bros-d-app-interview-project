@@ -5,5 +5,7 @@ const EdgeInsets kPaddingRight20 = EdgeInsets.only(right: 20);
 const EdgeInsets kPaddingRight30 = EdgeInsets.only(right: 30);
 const EdgeInsets kPaddingRight80 = EdgeInsets.only(right: 80);
 const EdgeInsets kPaddingAll80 = EdgeInsets.all(80);
+const EdgeInsets kPaddingButRight80 =
+    EdgeInsets.fromLTRB(80.0, 80.0, 0.0, 80.0);
 final BorderRadius kBorderRadius = BorderRadius.circular(12);
 const String kBullet = '\u2022';

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/constants.dart';
-import '../../core/images.dart';
 import '../widgets/bullet_text.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/red_app_button.dart';
@@ -30,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Padding(
-              padding: kPaddingAll80,
+              padding: kPaddingButRight80,
               child: Column(
                 children: [
                   Row(
@@ -68,16 +67,31 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       // green family picture
                       Expanded(
-                        child: Container(
-                          height: MediaQuery.sizeOf(context).height * 0.2,
-                          width: MediaQuery.sizeOf(context).width * 0.4,
-                          decoration: const BoxDecoration(
-                            color: AppColors.green,
-                            image: DecorationImage(
-                              image: AppImages.familyPicture,
+                        child: Stack(
+                          alignment: Alignment.centerRight,
+                          children: [
+                            // family picture
+                            Image.asset(
+                              'lib/images/family_picture.png',
+                              height: MediaQuery.sizeOf(context).height * 0.35,
                             ),
-                          ),
-                          child: Container(),
+
+                            // green background
+                            Opacity(
+                              opacity: 0.8,
+                              child: Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height * 0.35,
+                                width: MediaQuery.sizeOf(context).width * 0.4,
+                                color: AppColors.green,
+                                child: Container(),
+                              ),
+                            ),
+
+                            // app demo with mascot
+
+                            // app demo
+                          ],
                         ),
                       )
                     ],

@@ -58,10 +58,12 @@ class CustomAppBar extends StatelessWidget {
           child: AppImages.mascot2,
         ),
       ],
+
+      // green bar
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(50),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 60),
           decoration: const BoxDecoration(
             color: AppColors.green,
           ),
@@ -71,32 +73,35 @@ class CustomAppBar extends StatelessWidget {
               // logo
               AppLogos.white,
 
-              Row(
-                children: [
-                  // home
-                  TabNavButtons(
-                    text: 'Home',
-                    onPressed: () {},
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: Row(
+                  children: [
+                    // home
+                    TabNavButtons(
+                      text: 'Home',
+                      onPressed: () {},
+                    ),
 
-                  // product
-                  TabNavButtons(
-                    text: 'Product',
-                    onPressed: () {},
-                  ),
+                    // product
+                    TabNavButtons(
+                      text: 'Product',
+                      onPressed: () {},
+                    ),
 
-                  // Company
-                  TabNavButtons(
-                    text: 'Company',
-                    onPressed: () {},
-                  ),
+                    // Company
+                    TabNavButtons(
+                      text: 'Company',
+                      onPressed: () {},
+                    ),
 
-                  // Help
-                  TabNavButtons(
-                    text: 'Help',
-                    onPressed: () {},
-                  ),
-                ],
+                    // Help
+                    TabNavButtons(
+                      text: 'Help',
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
               ),
 
               // download button
