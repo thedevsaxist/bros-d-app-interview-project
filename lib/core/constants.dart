@@ -9,3 +9,10 @@ const EdgeInsets kPaddingButRight80 =
     EdgeInsets.fromLTRB(80.0, 80.0, 0.0, 80.0);
 final BorderRadius kBorderRadius = BorderRadius.circular(12);
 const String kBullet = '\u2022';
+
+class CustomToolbarHeight {
+  BuildContext context;
+  CustomToolbarHeight({required this.context});
+
+  double get cToolbarHeight => MediaQuery.of(context).size.height * 0.2;
+}

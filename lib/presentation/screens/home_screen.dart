@@ -17,10 +17,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final toolbarHeight = CustomToolbarHeight(context: context).cToolbarHeight;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize:
-            Size.fromHeight(MediaQuery.sizeOf(context).height * 0.23),
+        preferredSize: Size.fromHeight(toolbarHeight),
         child: const CustomAppBar(),
       ),
 

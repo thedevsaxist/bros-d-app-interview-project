@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 import '../../core/constants.dart';
 import '../../core/images.dart';
@@ -15,9 +16,14 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final toolbarHeight = CustomToolbarHeight(context: context).cToolbarHeight;
+
+    final String formattedDate = DateFormat('EEEE, MMMM d, y').format(
+      DateTime.now(),
+    );
     return AppBar(
-      leadingWidth: 20,
-      toolbarHeight: MediaQuery.sizeOf(context).height * 0.15,
+      // leadingWidth: 20,
+      toolbarHeight: toolbarHeight,
       title: const CustomSearchBar(),
       actions: [
         Padding(
@@ -33,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
               ),
               Text(
-                '${DateTime.now().weekday} ${DateTime.now().day} ${DateTime.now().month} ${DateTime.now().year}',
+                formattedDate,
                 style: GoogleFonts.poppins(
                   fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
                   color: AppColors.black,
