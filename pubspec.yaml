@@ -30,6 +30,7 @@ flutter:
     - lib/images/icons/
     - lib/images/logos/
     - lib/images/
+    - lib/images/bros_d_app_mascot.svg
 
   # fonts:
   #   - family: Schyler

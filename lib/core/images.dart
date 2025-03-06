@@ -32,7 +32,7 @@ class AppLogos {
   /// White version of app logo
   static final SvgPicture white = SvgPicture.asset(
     'lib/images/logos/logo_white.svg',
-    height: 24,
+    height: 30,
     fit: BoxFit.cover,
   );
 
@@ -106,8 +106,17 @@ class AppImages {
   static final SvgPicture demoApp = SvgPicture.asset('lib/images/demo_app.svg');
 
   /// App mascot illustration
-  static final SvgPicture mascot =
-      SvgPicture.asset('lib/images/bros_d_app_mascot.svg');
+  static final SvgPicture mascot = SvgPicture.asset(
+    'lib/images/bros_d_app_mascot.svg',
+    height: 24,
+    fit: BoxFit.cover,
+  );
+
+  static final Image mascot2 = Image.asset(
+    'lib/images/mascot.png',
+    height: 50,
+    fit: BoxFit.cover,
+  );
 }
 
 /// Contains construction and building related service icons

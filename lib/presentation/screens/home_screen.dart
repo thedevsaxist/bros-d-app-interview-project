@@ -20,33 +20,52 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: MediaQuery.sizeOf(context).height * 0.2,
+        leadingWidth: 20,
+        toolbarHeight: MediaQuery.sizeOf(context).height * 0.15,
         title: const CustomSearchBar(),
         actions: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Welcome, Eniola',
-                style: GoogleFonts.poppins(
-                  fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
-                  color: AppColors.green,
+          Padding(
+            padding: kPaddingRight80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Welcome, Eniola',
+                  style: GoogleFonts.poppins(
+                    fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
+                    color: AppColors.green,
+                  ),
                 ),
-              ),
-              Text(
-                '${DateTime.now().month}',
-                style: GoogleFonts.poppins(
-                  fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
-                  color: AppColors.black,
+                Text(
+                  '${DateTime.now().weekday} ${DateTime.now().day} ${DateTime.now().month} ${DateTime.now().year}',
+                  style: GoogleFonts.poppins(
+                    fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
+                    color: AppColors.black,
+                  ),
                 ),
-              )
-            ],
+              ],
+            ),
+          ),
+
+          // notification button
+          Padding(
+            padding: kPaddingRight30,
+            child: IconButton(
+              onPressed: () {},
+              icon: AppIcons.notificationIcon,
+            ),
+          ),
+
+          // mascot
+          Padding(
+            padding: kPaddingRight30,
+            child: AppImages.mascot2,
           ),
         ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(50),
           child: Container(
-            padding: kPadding20,
+            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 15),
             decoration: const BoxDecoration(
               color: AppColors.green,
             ),
