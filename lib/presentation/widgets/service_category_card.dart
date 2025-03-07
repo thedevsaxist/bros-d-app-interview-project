@@ -2,6 +2,8 @@ import 'package:bros_d_app_2nd_stage_test/core/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'construction_and_building_grid.dart';
+
 class ServiceCategoryCard extends StatefulWidget {
   final int id;
   final String name;
@@ -21,7 +23,7 @@ class ServiceCategoryCard extends StatefulWidget {
 class _ServiceCategoryCardState extends State<ServiceCategoryCard> {
   @override
   Widget build(BuildContext context) {
-    final OverlayPortalController overlayController = OverlayPortalController();
+    // final OverlayPortalController overlayController = OverlayPortalController();
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -34,23 +36,18 @@ class _ServiceCategoryCardState extends State<ServiceCategoryCard> {
                   color: AppColors.white,
                 ),
           ),
-          child: OverlayPortal(
-            controller: overlayController,
-            overlayChildBuilder: (context) {
-              print('Overlay shown');
-              return Positioned(
-                right: MediaQuery.sizeOf(context).width * 0.4,
-                top: MediaQuery.sizeOf(context).height * 0.6,
-                child: const Text("I'm an overlay"),
-              );
-            },
-            child: GestureDetector(
-              onTap: () => overlayController.toggle(),
-              child: Card(
-                color: AppColors.white,
-                elevation: 6,
-                child: SizedBox(height: 150, width: 200, child: widget.image),
-              ),
+          child: GestureDetector(
+            onTap: () => showAdaptiveDialog(
+              barrierDismissible: true,
+              context: context,
+              builder: (context) {
+                return const Center(child: ConstructionAndBuildingGrid());
+              },
+            ),
+            child: Card(
+              color: AppColors.white,
+              elevation: 6,
+              child: SizedBox(height: 150, width: 200, child: widget.image),
             ),
           ),
         ),
