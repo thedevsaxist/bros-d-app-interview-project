@@ -26,7 +26,7 @@ class _ServiceCategoryCardState extends State<ServiceCategoryCard> {
       children: [
         Badge(
           largeSize: 48,
-          backgroundColor: AppColors.red,
+          backgroundColor: AppColors.green,
           label: Text(
             widget.id.toString(),
             style: Theme.of(context).textTheme.labelLarge?.copyWith(

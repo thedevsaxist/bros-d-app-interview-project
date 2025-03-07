@@ -61,7 +61,7 @@ class CustomAppBar extends StatelessWidget {
         // mascot
         Padding(
           padding: kPaddingRight30,
-          child: AppImages.mascot2,
+          child: SizedBox(height: 50, child: AppImages.mascot2),
         ),
       ],
 

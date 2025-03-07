@@ -121,7 +121,7 @@ class AppImages {
 
   static final Image mascot2 = Image.asset(
     'lib/images/mascot.png',
-    height: 50,
+    // height: 50,
     fit: BoxFit.cover,
   );
 }

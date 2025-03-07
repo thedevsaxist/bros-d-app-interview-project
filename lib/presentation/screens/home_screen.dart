@@ -1,6 +1,7 @@
 import 'package:bros_d_app_2nd_stage_test/core/themes.dart';
 import 'package:bros_d_app_2nd_stage_test/data/datasources/service_category_data.dart';
 import 'package:bros_d_app_2nd_stage_test/presentation/widgets/service_category_card.dart';
+import 'package:bros_d_app_2nd_stage_test/presentation/widgets/top_pro_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -110,13 +111,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30.0),
+                    padding: const EdgeInsets.only(top: 60.0, bottom: 30.0),
                     child: Text(
                       'Service Category',
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: AppColors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.bold,
+                        fontSize:
+                            Theme.of(context).textTheme.bodyLarge?.fontSize,
+                        color: AppColors.red,
+                      ),
                     ),
                   ),
                   GridView.builder(
@@ -136,7 +139,29 @@ class _HomeScreenState extends State<HomeScreen> {
                         image: item.serviceCategory,
                       );
                     },
-                  )
+                  ),
+                  Text(
+                    'Top Bros-D Professionals',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.bold,
+                      fontSize: Theme.of(context).textTheme.bodyLarge?.fontSize,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 300,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        return const TopProCard(
+                          name: 'Seun Aba',
+                          occupation: 'Plumber',
+                          rating: 4.5,
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),

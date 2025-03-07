@@ -6,9 +6,10 @@ const EdgeInsets kPaddingRight30 = EdgeInsets.only(right: 30);
 const EdgeInsets kPaddingRight80 = EdgeInsets.only(right: 80);
 const EdgeInsets kPaddingAll80 = EdgeInsets.all(80);
 const EdgeInsets kPaddingButRight80 =
-    EdgeInsets.fromLTRB(80.0, 80.0, 0.0, 80.0);
+    EdgeInsets.fromLTRB(100.0, 100.0, 0.0, 100.0);
 final BorderRadius kBorderRadius = BorderRadius.circular(12);
 const String kBullet = '\u2022';
+const SizedBox kSizedBoxHeight20 = SizedBox(height: 20);
 
 class CustomToolbarHeight {
   BuildContext context;
