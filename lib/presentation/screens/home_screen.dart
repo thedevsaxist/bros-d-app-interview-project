@@ -1,14 +1,17 @@
 import 'package:bros_d_app_2nd_stage_test/core/themes.dart';
 import 'package:bros_d_app_2nd_stage_test/data/datasources/service_category_data.dart';
 import 'package:bros_d_app_2nd_stage_test/data/datasources/top_pro_data.dart';
+import 'package:bros_d_app_2nd_stage_test/presentation/state/home_screen_view_model.dart';
 import 'package:bros_d_app_2nd_stage_test/presentation/widgets/service_category_card.dart';
 import 'package:bros_d_app_2nd_stage_test/presentation/widgets/top_pro_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/constants.dart';
 import '../widgets/bullet_text.dart';
 import '../widgets/custom_app_bar.dart';
+import '../widgets/form_input.dart';
 import '../widgets/red_app_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final toolbarHeight = CustomToolbarHeight(context: context).cToolbarHeight;
+    final viewModel = Provider.of<HomeScreenViewModel>(context);
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(toolbarHeight),
@@ -173,15 +178,56 @@ class _HomeScreenState extends State<HomeScreen> {
             // bottom section
             Container(
               width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).height * 0.3,
-              color: AppColors.black,
-              child: const Row(
-                children: [
-                  // first column
-                  Column(
-                    children: [],
-                  )
-                ],
+              // height: MediaQuery.sizeOf(context).height * 0.5,
+              decoration: const BoxDecoration(
+                color: AppColors.black,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 60.0, vertical: 30),
+                child: Row(
+                  children: [
+                    // first column
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Speak to our Team',
+                          style:
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    color: AppColors.white,
+                                  ),
+                        ),
+                        FormInput(
+                          hintText: 'Full Name',
+                          controller: viewModel.fullNameController,
+                        ),
+                        FormInput(
+                          hintText: 'Address',
+                          controller: viewModel.addressController,
+                        ),
+                        FormInput(
+                          hintText: 'Email',
+                          controller: viewModel.emailController,
+                        ),
+                        FormInput(
+                          hintText: 'Phone Number',
+                          controller: viewModel.phoneNumberController,
+                        ),
+
+                        // submit button
+                        RedAppButton(
+                          onPressed: () {},
+                          label: 'Submit',
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],

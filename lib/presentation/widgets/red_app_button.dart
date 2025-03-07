@@ -43,6 +43,7 @@ class _RedAppButtonState extends State<RedAppButton> {
         widget.label,
         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               color: widget.isInverse == null ? AppColors.white : AppColors.red,
+              fontWeight: FontWeight.w700,
             ),
       ),
     );
