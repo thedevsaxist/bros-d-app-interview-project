@@ -1,4 +1,4 @@
-# bros_d_app_2nd_stage_test
+# Bros D App Demo
 
 A Flutter project for the second stage test of the Bros D app interview.
 
