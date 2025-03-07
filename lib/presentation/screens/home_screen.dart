@@ -1,5 +1,6 @@
 import 'package:bros_d_app_2nd_stage_test/core/themes.dart';
 import 'package:bros_d_app_2nd_stage_test/data/datasources/service_category_data.dart';
+import 'package:bros_d_app_2nd_stage_test/data/datasources/top_pro_data.dart';
 import 'package:bros_d_app_2nd_stage_test/presentation/widgets/service_category_card.dart';
 import 'package:bros_d_app_2nd_stage_test/presentation/widgets/top_pro_card.dart';
 import 'package:flutter/material.dart';
@@ -152,12 +153,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: 10,
+                      itemCount: topProData.length,
                       itemBuilder: (context, index) {
-                        return const TopProCard(
-                          name: 'Seun Aba',
-                          occupation: 'Plumber',
-                          rating: 4.5,
+                        final item = topProData[index];
+                        return TopProCard(
+                          name: item.name,
+                          occupation: item.occupation,
+                          rating: item.rating,
                         );
                       },
                     ),
