@@ -1,4 +1,6 @@
 import 'package:bros_d_app_2nd_stage_test/core/themes.dart';
+import 'package:bros_d_app_2nd_stage_test/data/datasources/service_category_data.dart';
+import 'package:bros_d_app_2nd_stage_test/presentation/widgets/service_category_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: kPaddingButRight80,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
@@ -93,9 +96,36 @@ class _HomeScreenState extends State<HomeScreen> {
                             // app demo
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30.0),
+                    child: Text(
+                      'Service Category',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: AppColors.red,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                  // GridView.builder(
+                  //   gridDelegate:
+                  //       const SliverGridDelegateWithFixedCrossAxisCount(
+                  //     crossAxisCount: 4,
+                  //   ),
+                  //   itemCount: serviceCategoryList.length,
+                  //   itemBuilder: (context, index) {
+                  //     final item = serviceCategoryList[index];
+                  //     return
+                  ServiceCategoryCard(
+                    id: serviceCategoryList[0].id,
+                    name: serviceCategoryList[0].name,
+                    image: serviceCategoryList[0].serviceCategory,
+                  ),
+                  //   },
+                  // )
                 ],
               ),
             ),
