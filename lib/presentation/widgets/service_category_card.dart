@@ -21,6 +21,7 @@ class ServiceCategoryCard extends StatefulWidget {
 class _ServiceCategoryCardState extends State<ServiceCategoryCard> {
   @override
   Widget build(BuildContext context) {
+    final OverlayPortalController overlayController = OverlayPortalController();
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -33,10 +34,24 @@ class _ServiceCategoryCardState extends State<ServiceCategoryCard> {
                   color: AppColors.white,
                 ),
           ),
-          child: Card(
-            color: AppColors.white,
-            elevation: 6,
-            child: SizedBox(height: 150, width: 200, child: widget.image),
+          child: OverlayPortal(
+            controller: overlayController,
+            overlayChildBuilder: (context) {
+              print('Overlay shown');
+              return Positioned(
+                right: MediaQuery.sizeOf(context).width * 0.4,
+                top: MediaQuery.sizeOf(context).height * 0.6,
+                child: const Text("I'm an overlay"),
+              );
+            },
+            child: GestureDetector(
+              onTap: () => overlayController.toggle(),
+              child: Card(
+                color: AppColors.white,
+                elevation: 6,
+                child: SizedBox(height: 150, width: 200, child: widget.image),
+              ),
+            ),
           ),
         ),
 

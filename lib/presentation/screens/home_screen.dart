@@ -361,11 +361,36 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ?.fontSize,
                                   ),
                                 ),
-                                AppLogos.youTubeLogo,
-                                AppLogos.threadsLogo,
-                                AppLogos.facebookLogo,
-                                AppLogos.twitterLogo,
-                                AppLogos.instagramLogo,
+
+                                // youtube
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: AppLogos.youTubeLogo,
+                                ),
+
+                                // threads
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: AppLogos.threadsLogo,
+                                ),
+
+                                // facebook
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: AppLogos.facebookLogo,
+                                ),
+
+                                // twitter
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: AppLogos.twitterLogo,
+                                ),
+
+                                // instagram
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: AppLogos.instagramLogo,
+                                ),
                               ],
                             ),
                           ],
