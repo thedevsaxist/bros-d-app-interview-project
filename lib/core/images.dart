@@ -30,6 +30,12 @@ class AppIcons {
 
 /// Contains app logo variants
 class AppLogos {
+  static final SvgPicture youTubeLogo = SvgPicture.asset('lib/images/logos/youtube_logo.svg');
+  static final SvgPicture threadsLogo = SvgPicture.asset('lib/images/logos/threads_logo.svg');
+  static final SvgPicture facebookLogo = SvgPicture.asset('lib/images/logos/facebook_logo.svg');
+  static final SvgPicture twitterLogo = SvgPicture.asset('lib/images/logos/twitter_logo.svg');
+  static final SvgPicture instagramLogo = SvgPicture.asset('lib/images/logos/instagram_logo.svg');
+
   /// White version of app logo
   static final SvgPicture white = SvgPicture.asset(
     'lib/images/logos/logo_white.svg',

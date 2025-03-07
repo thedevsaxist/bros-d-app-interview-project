@@ -1,3 +1,4 @@
+import 'package:bros_d_app_2nd_stage_test/core/images.dart';
 import 'package:bros_d_app_2nd_stage_test/core/themes.dart';
 import 'package:bros_d_app_2nd_stage_test/data/datasources/service_category_data.dart';
 import 'package:bros_d_app_2nd_stage_test/data/datasources/top_pro_data.dart';
@@ -188,49 +189,251 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 60.0, vertical: 30),
-                child: Row(
+                    const EdgeInsets.symmetric(horizontal: 70.0, vertical: 40),
+                child: Column(
                   children: [
-                    // first column
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Speak to our Team',
-                          style:
-                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                        // first column
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AppLogos.colored,
+                            Text(
+                              'Speak to our Team',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
                                     color: AppColors.white,
                                   ),
-                        ),
-                        FormInput(
-                          hintText: 'Full Name',
-                          controller: viewModel.fullNameController,
-                        ),
-                        FormInput(
-                          hintText: 'Address',
-                          controller: viewModel.addressController,
-                        ),
-                        FormInput(
-                          hintText: 'Email',
-                          controller: viewModel.emailController,
-                        ),
-                        FormInput(
-                          hintText: 'Phone Number',
-                          controller: viewModel.phoneNumberController,
+                            ),
+                            FormInput(
+                              hintText: 'Full Name',
+                              controller: viewModel.fullNameController,
+                            ),
+                            FormInput(
+                              hintText: 'Address',
+                              controller: viewModel.addressController,
+                            ),
+                            FormInput(
+                              hintText: 'Email',
+                              controller: viewModel.emailController,
+                            ),
+                            FormInput(
+                              hintText: 'Phone Number',
+                              controller: viewModel.phoneNumberController,
+                            ),
+
+                            // submit button
+                            RedAppButton(
+                              onPressed: () {},
+                              label: 'Submit',
+                            ),
+                          ],
                         ),
 
-                        // submit button
-                        RedAppButton(
-                          onPressed: () {},
-                          label: 'Submit',
+                        // map
+                        Image.asset(
+                          'lib/images/map.png',
+                          fit: BoxFit.contain,
+                          scale: 2.2,
+                        ),
+
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // fast links section
+                            Text(
+                              'Fast Links',
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.white,
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.fontSize,
+                              ),
+                            ),
+
+                            // careers
+                            FastLinks(
+                              text: 'Careers',
+                              onPressed: () {},
+                            ),
+
+                            // contact us
+                            FastLinks(
+                              text: 'Contact Us',
+                              onPressed: () {},
+                            ),
+
+                            // webapp
+                            FastLinks(
+                              text: 'WebApp',
+                              onPressed: () {},
+                            ),
+
+                            // FAQs
+                            FastLinks(
+                              text: 'FAQs',
+                              onPressed: () {},
+                            ),
+
+                            // About Us
+                            FastLinks(
+                              text: 'Careers',
+                              onPressed: () {},
+                            ), // careers
+
+                            const SizedBox(height: 10),
+
+                            // download button
+                            TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                padding: const EdgeInsets.all(0),
+                              ),
+                              child: Text(
+                                'Download App',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.white,
+                                  fontSize: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.fontSize,
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width,
+                        height: MediaQuery.sizeOf(context).height * 0.1,
+                        padding: kPadding20,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: AppColors.white,
+                            width: 1,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                // privacy policy
+                                BottomNavBarButtons(
+                                  onPressed: () {},
+                                  text: 'Privacy Policy | ',
+                                ),
+
+                                // terms of use
+                                BottomNavBarButtons(
+                                  onPressed: () {},
+                                  text: 'Terms of Use | ',
+                                ),
+
+                                // refund policy
+                                BottomNavBarButtons(
+                                  onPressed: () {},
+                                  text: 'Refund Policy',
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "We're on Socials: ",
+                                  style: GoogleFonts.poppins(
+                                    color: AppColors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.fontSize,
+                                  ),
+                                ),
+                                AppLogos.youTubeLogo,
+                                AppLogos.threadsLogo,
+                                AppLogos.facebookLogo,
+                                AppLogos.twitterLogo,
+                                AppLogos.instagramLogo,
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class BottomNavBarButtons extends StatelessWidget {
+  final String text;
+  final void Function() onPressed;
+
+  const BottomNavBarButtons({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        padding: const EdgeInsets.all(0),
+      ),
+      child: Text(
+        text,
+        style: GoogleFonts.poppins(
+          color: AppColors.white,
+          fontWeight: FontWeight.w500,
+          fontSize: Theme.of(context).textTheme.titleMedium?.fontSize,
+        ),
+      ),
+    );
+  }
+}
+
+class FastLinks extends StatelessWidget {
+  final String text;
+  final void Function() onPressed;
+
+  const FastLinks({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        padding: const EdgeInsets.all(0),
+      ),
+      child: Text(
+        text,
+        style: GoogleFonts.poppins(
+          color: AppColors.white,
+          fontSize: Theme.of(context).textTheme.titleMedium?.fontSize,
         ),
       ),
     );
