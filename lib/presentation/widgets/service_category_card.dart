@@ -22,6 +22,7 @@ class _ServiceCategoryCardState extends State<ServiceCategoryCard> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Badge(
           largeSize: 48,

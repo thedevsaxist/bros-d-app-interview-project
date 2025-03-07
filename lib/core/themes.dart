@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final ThemeData appTheme = ThemeData(
-    // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.green),
     useMaterial3: true,
     textTheme: GoogleFonts.mondaTextTheme(),
     scaffoldBackgroundColor: AppColors.white);

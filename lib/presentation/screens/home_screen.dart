@@ -17,6 +17,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late final ScrollController scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    scrollController = ScrollController();
+  }
+
   @override
   Widget build(BuildContext context) {
     final toolbarHeight = CustomToolbarHeight(context: context).cToolbarHeight;
@@ -28,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // body
       body: SingleChildScrollView(
+        controller: scrollController,
         child: Column(
           children: [
             Padding(
@@ -99,7 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 30.0),
                     child: Text(
@@ -110,22 +119,24 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                     ),
                   ),
-                  // GridView.builder(
-                  //   gridDelegate:
-                  //       const SliverGridDelegateWithFixedCrossAxisCount(
-                  //     crossAxisCount: 4,
-                  //   ),
-                  //   itemCount: serviceCategoryList.length,
-                  //   itemBuilder: (context, index) {
-                  //     final item = serviceCategoryList[index];
-                  //     return
-                  ServiceCategoryCard(
-                    id: serviceCategoryList[0].id,
-                    name: serviceCategoryList[0].name,
-                    image: serviceCategoryList[0].serviceCategory,
-                  ),
-                  //   },
-                  // )
+                  GridView.builder(
+                    padding: kPaddingRight80,
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                    ),
+                    itemCount: serviceCategoryList.length,
+                    itemBuilder: (context, index) {
+                      final item = serviceCategoryList[index];
+                      return ServiceCategoryCard(
+                        id: item.id,
+                        name: item.name,
+                        image: item.serviceCategory,
+                      );
+                    },
+                  )
                 ],
               ),
             ),
